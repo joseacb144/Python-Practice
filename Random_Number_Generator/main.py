@@ -12,4 +12,6 @@ if __name__ == '__main__':
     number = int(input("How many numbers are in your range?\n")) # Ask user for the range of numbers
     array_num = int(input("How many lists of numbers do you need?\n"))
     value_num = int(input("How many numbers do you need in each list?\n"))
+
+    # Run function
     random_numbers(number, array_num, value_num)
