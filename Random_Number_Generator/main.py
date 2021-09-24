@@ -1,7 +1,7 @@
 # random is needed to use random.sample()
 import random
 
-# function that prints an list of 5 random numbers from 1 to 70
+# function that prints a list of v_num random numbers from 1 to num
 def random_numbers(num=1, l_num=1, v_num=1):
     for i in range(l_num):
         n = random.sample(range(1, num+1), v_num) #random.sample selects unique values (nonrepetitive)
