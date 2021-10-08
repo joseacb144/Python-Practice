@@ -7,6 +7,8 @@ def number():
 def symbol():
     return random.choice(['+','-','*'])
 
+def _symbol():
+    return random.choice(["", "-"])
 
 if __name__ == '__main__':
 
@@ -19,9 +21,10 @@ if __name__ == '__main__':
         a = str(number())
         b = str(number())
         c = symbol()
-        d = a + c + b
+        z = _symbol()
+        d = z + a + c + b
         e =eval(d)
-        print(f'Question {question_count}: {a} {c} {b}')
+        print(f'Question {question_count}: {z} {a} {c} {b}')
 
         player_answer = int(input("What is the answer? "))
         if player_answer == e:
