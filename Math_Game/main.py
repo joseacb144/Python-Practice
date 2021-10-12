@@ -1,17 +1,24 @@
 import random
 import os
 
+random.seed()
+
+
 def number():
-    return (random.randint(0,10))
+    return random.randint(0, 10)
+
 
 def symbol():
-    return random.choice(['+','-'])
+    return random.choice(['+', '-'])
+
 
 def symbol_pro():
-    return random.choice(['+','-','*'])
+    return random.choice(['+', '-', '*'])
+
 
 def _symbol():
     return random.choice(["", "-"])
+
 
 def beginner_game():
     question_count = 1
@@ -30,10 +37,11 @@ def beginner_game():
             score += 1
             question_count += 1
         else:
-            print(f"Incorrect!\n")
+            print(f"That is incorrect. The answer is: {e}.\n")
             question_count += 1
 
     print(f'Your total score is: {score}.')
+
 
 def pro_game():
     question_count = 1
@@ -55,10 +63,11 @@ def pro_game():
             score += 1
             question_count += 1
         else:
-            print(f"Incorrect!\n")
+            print(f"That is incorrect. The answer is: {e}.\n")
             question_count += 1
 
     print(f'Your total score is: {score}.')
+
 
 if __name__ == '__main__':
 
