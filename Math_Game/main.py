@@ -24,25 +24,26 @@ def _symbol():
 def game(difficulty):
     question_count = 1
     score = 0
-    game_time = 10
+    game_time = 10 # Used for PRO. PRO gives players 10 seconds to answer
+
     while question_count <= 10:
-        if difficulty == 1:
+        if difficulty == 1: # BEGINNER
             math_question = f'{number()} {symbol()} {number()}'
-        else:
+        else: #PRO
             math_question = f'{_symbol()} {number()} {symbol_pro()} {number()} {symbol_pro()} {number()}'
-            initial_time = time()
+            initial_time = time() # Used to grab the initial time after the question is given in PRO.
         math_answer = eval(math_question)
         print(f'Question {question_count}: {math_question}')
 
         player_answer = int(input("What is the answer? "))
-        time_taken = (time() - initial_time)
-        intime = time_taken < game_time
+        time_taken = (time() - initial_time) # Used to identify how many seconds the player used to answer in PRO.
+        intime = time_taken < game_time # Checks to see if the player answered in time in PRO.
         if intime:
             if player_answer == math_answer:
                 print(f"Correct! The answer is: {math_answer} \n")
                 score += 1
                 question_count += 1
-                print(game_time-time_taken)
+                print(game_time-time_taken) # 10 seconds - the amount of seconds taken to answer
             else:
                 print(f"That is incorrect. The answer is: {math_answer}.\n")
                 question_count += 1
