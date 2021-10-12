@@ -19,6 +19,8 @@ def symbol_pro():
 def _symbol():
     return random.choice(["", "-"])
 
+def print_dash(i):
+    print('-' * i)
 
 def game(difficulty):
     question_count = 1
@@ -33,6 +35,7 @@ def game(difficulty):
             initial_time = time()  # Used to grab the initial time after the question is given in PRO.
         math_answer = eval(math_question)
         print(f'Question {question_count}: {math_question}')
+        print_dash(25)
 
         if difficulty == 1:
             player_answer = int(input("What is the answer? "))
@@ -46,30 +49,29 @@ def game(difficulty):
 
         elif difficulty == 2:
             player_answer = int(input("What is the answer? "))
-            time_taken = (time() - initial_time)  # Used to identify how many seconds the player used to answer in PRO.
+            time_taken = int(time() - initial_time)  # Used to identify how many seconds the player used to answer in PRO.
             intime = time_taken < game_time  # Checks to see if the player answered in time in PRO.
             if intime:
                 if player_answer == math_answer:
-                    print(f"Correct! The answer is: {math_answer} \n")
-                    score += 1
+                    score += int(game_time - time_taken) # 10 seconds - the amount of seconds taken to answer (to see how much time was left)
+                    print(f"Correct! The answer is: {math_answer} ")
+                    print(f"Time elapsed: {int(time_taken)}\n")
                     question_count += 1
-                    print(game_time - time_taken)  # 10 seconds - the amount of seconds taken to answer (to see how much time was left)
                 else:
                     print(f"That is incorrect. The answer is: {math_answer}.\n")
                     question_count += 1
-                    print(game_time - time_taken)
             else:
                 print("Out of time!")
                 break
 
-    print(f'Your total score is: {score}.')
+    print(f'\nYour total score is: {score}.')
 
 
 if __name__ == '__main__':
 
-    print('-'*59)
+    print_dash(59)
     print('| Hello and welcome to the Basic Math Game by Jose Chavez |')
-    print('-'*59)
+    print_dash(59)
     print('* INFO: \n- BEGINNER is basic addition and subtraction. '
           '\n- You are given 1 point for each correct answer for a total of 10 questions.'
           
