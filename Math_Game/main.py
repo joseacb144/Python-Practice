@@ -24,20 +24,17 @@ def beginner_game():
     question_count = 1
     score = 0
     while question_count <= 10:
-        a = str(number())
-        b = str(number())
-        c = symbol()
-        d = a + c + b
-        e = eval(d)
-        print(f'Question {question_count}: {a} {c} {b}')
+        math_question = f'{number()} {symbol()} {number()}'
+        math_answer = eval(math_question)
+        print(f'Question {question_count}: {math_question}')
 
         player_answer = int(input("What is the answer? "))
-        if player_answer == e:
-            print(f"Correct! The answer is: {e} \n")
+        if player_answer == math_answer:
+            print(f"Correct! The answer is: {math_answer} \n")
             score += 1
             question_count += 1
         else:
-            print(f"That is incorrect. The answer is: {e}.\n")
+            print(f"That is incorrect. The answer is: {math_answer}.\n")
             question_count += 1
 
     print(f'Your total score is: {score}.')
