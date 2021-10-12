@@ -44,23 +44,17 @@ def pro_game():
     question_count = 1
     score = 0
     while question_count <= 10:
-        a = str(number())
-        b = str(number())
-        i = str(number())
-        c = symbol_pro()
-        j = symbol_pro()
-        z = _symbol()
-        d = z + a + c + b + j + i
-        e = eval(d)
-        print(f'Question {question_count}: {z} {a} {c} {b} {j} {i}')
+        math_question = f'{_symbol()} {number()} {symbol_pro()} {number()} {symbol_pro()} {number()}'
+        math_answer = eval(math_question)
+        print(f'Question {question_count}: {math_question}')
 
         player_answer = int(input("What is the answer? "))
-        if player_answer == e:
-            print(f"Correct! The answer is: {e} \n")
+        if player_answer == math_answer:
+            print(f"Correct! The answer is: {math_answer} \n")
             score += 1
             question_count += 1
         else:
-            print(f"That is incorrect. The answer is: {e}.\n")
+            print(f"That is incorrect. The answer is: {math_answer}.\n")
             question_count += 1
 
     print(f'Your total score is: {score}.')
