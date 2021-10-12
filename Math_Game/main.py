@@ -1,5 +1,6 @@
 import random
 import os
+
 random.seed()
 
 
@@ -18,10 +19,10 @@ def symbol_pro():
 def _symbol():
     return random.choice(["", "-"])
 
+
 def game(difficulty):
     question_count = 1
     score = 0
-    math_question = ''
     while question_count <= 10:
         if difficulty == 1:
             math_question = f'{number()} {symbol()} {number()}'
@@ -43,14 +44,8 @@ def game(difficulty):
 
 
 if __name__ == '__main__':
-
     print('Hello, you get 10 questions to answer!\n')
     player_decision = int(input("Select 1 for beginner or select 2 for pro.\n"))
-
-    # if player_decision == 1:
-    #     beginner_game()
-    # elif player_decision == 2:
-    #     pro_game()
 
     game(player_decision)
 
